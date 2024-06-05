@@ -52,6 +52,8 @@ const SignUpScreen = () => {
         .then(res => {
           console.log(res.user);
           setLoggedInUser(res.user);
+          navigation.navigate("ProductList")
+
         })
         .catch(err => {
           console.log(err);

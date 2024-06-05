@@ -50,6 +50,7 @@ const LoginScreen = ({navigation}) => {
         .then(res => {
           console.log('successful');
           setLoggedInUser(res.user);
+          navigation.navigate("ProductList")
         })
         .catch(err => {
           console.log(err);
