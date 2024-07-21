@@ -13,6 +13,7 @@ import {
 import {authentication} from '../firebase/config';
 import {createUserWithEmailAndPassword} from 'firebase/auth';
 import {useAuth} from '../contexts/AuthContext';
+import { calcH, calcW } from '../utils.js/common';
 
 const SignUpScreen = () => {
   const [email, setEmail] = useState('');
@@ -142,46 +143,51 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ffffff',
-    paddingHorizontal: 20,
+    padding: calcW(0.06),
   },
   title: {
-    fontSize: 24,
+    fontSize: calcW(0.05),
     fontWeight: 'bold',
-    marginBottom: 20,
+    marginBottom: calcH(0.04),
   },
   input: {
-    width: '100%',
-    height: 40,
-    borderColor: '#ccc',
+    width: calcW(0.9),
+    height: calcH(0.06),
+    borderColor: 'gray',
     borderWidth: 1,
-    borderRadius: 5,
-    marginBottom: 16,
-    paddingLeft: 8,
+    marginBottom: calcH(0.03),
+    paddingLeft: calcW(0.02),
+    paddingRight: calcW(0.02),
     color: '#000',
   },
   button: {
-    backgroundColor: '#007BFF',
-    width: '100%',
-    paddingVertical: 15,
-    borderRadius: 10,
-    marginTop: 10,
+    backgroundColor: '#302298',
+    borderRadius: 20,
+    padding: calcH(0.02),
+    margin: calcH(0.015),
+    width: calcW(0.9),
+    height: calcH(0.07),
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
   },
   buttonText: {
-    color: '#ffffff',
-    fontSize: 18,
+    color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
+    fontSize: calcW(0.04),
+    alignSelf: 'center',
   },
   passwordContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '100%',
-    height: 40,
-    borderColor: '#ccc',
+    width: calcW(0.9),
+    height: calcH(0.07),
+    borderColor: 'gray',
     borderWidth: 1,
-    marginBottom: 16,
-    paddingLeft: 8,
-    paddingRight: 8,
+    marginBottom: calcH(0.02),
+    paddingLeft: calcW(0.02),
+    paddingRight: calcW(0.02),
   },
   passwordInput: {
     flex: 1,
@@ -191,8 +197,9 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   icon: {
-    width: 24,
-    height: 24,
+    width: calcW(0.05),
+    height: calcH(0.05),
+    resizeMode: 'contain'
   },
 });
 

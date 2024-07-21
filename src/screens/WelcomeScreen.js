@@ -7,6 +7,7 @@ import {
   View,
   Image,
 } from 'react-native';
+import { calcH, calcW } from '../utils.js/common';
 
 const WelcomeScreen = ({navigation}) => {
   return (
@@ -37,34 +38,34 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ffffff',
-    paddingHorizontal: 20,
+    paddingHorizontal: calcH(0.1),
   },
   logo: {
-    width: 150,
-    height: 150,
-    marginBottom: 20,
+    width: calcW(0.15),
+    height: calcH(0.15),
+    marginBottom: calcH(0.02),
   },
   title: {
-    fontSize: 24,
+    fontSize: calcW(0.05),
     fontWeight: 'bold',
-    marginBottom: 30,
+    marginBottom: calcH(0.02),
   },
   subtitle: {
-    fontSize: 16,
-    marginBottom: 30,
+    fontSize: calcW(0.04),
+    marginBottom: calcH(0.03),
     textAlign: 'center',
   },
   button: {
     backgroundColor: '#007BFF',
     width: '90%',
-    paddingVertical: 15,
-    marginHorizontal: 15,
+    paddingVertical: calcW(0.03),
+    marginHorizontal: calcH(0.03),
     borderRadius: 8,
-    marginBottom: 20,
+    marginBottom: calcH(0.02),
   },
   buttonText: {
     color: '#ffffff',
-    fontSize: 18,
+    fontSize: calcW(0.05),
     fontWeight: 'bold',
     textAlign: 'center',
   },

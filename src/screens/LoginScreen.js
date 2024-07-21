@@ -14,6 +14,7 @@ import {
 import {authentication} from '../firebase/config';
 import {signInWithEmailAndPassword} from 'firebase/auth';
 import {useAuth} from '../contexts/AuthContext';
+import { calcH, calcW } from '../utils.js/common';
 
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = React.useState('');
@@ -50,7 +51,7 @@ const LoginScreen = ({navigation}) => {
         .then(res => {
           console.log('successful');
           setLoggedInUser(res.user);
-          navigation.navigate("ProductList")
+          navigation.navigate("EventList")
         })
         .catch(err => {
           console.log(err);
@@ -94,6 +95,7 @@ const LoginScreen = ({navigation}) => {
           onPress={() => setPasswordVisible(!passwordVisible)}
           style={styles.eyeIcon}>
           <Image
+          resizeMode='contain'
             source={{
               uri: passwordVisible
                 ? 'https://cdn-icons-png.flaticon.com/512/25/25186.png'
@@ -137,29 +139,29 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
+    padding: calcH(0.03),
   },
   label: {
-    fontSize: 16,
-    marginBottom: 8,
+    fontSize: calcW(0.02),
+    marginBottom: calcH(0.02),
   },
   input: {
-    width: '100%',
-    height: 40,
+    width: calcW(0.9),
+    height: calcH(0.06),
     borderColor: 'gray',
     borderWidth: 1,
-    marginBottom: 16,
-    paddingLeft: 8,
-    paddingRight: 8,
+    marginBottom: calcH(0.03),
+    paddingLeft: calcW(0.02),
+    paddingRight: calcW(0.02),
     color: '#000',
   },
   button: {
     backgroundColor: '#302298',
     borderRadius: 20,
-    padding: 10,
-    margin: 14,
-    width: '78%',
-    height: 50,
+    padding: calcH(0.02),
+    margin: calcH(0.015),
+    width: calcW(0.9),
+    height: calcH(0.07),
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
@@ -168,52 +170,53 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: calcW(0.04),
     alignSelf: 'center',
   },
   welcomeText: {
-    fontSize: 24,
+    fontSize: calcW(0.06),
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: calcH(0.02),
     textAlign: 'center',
   },
   logo: {
-    width: 150,
-    height: 150,
+    width: calcW(0.45),
+    height: calcH(0.2),
     marginBottom: 20,
+    // resizeMode: 'contain'
   },
   downText: {
     color: '#331ece',
-    fontSize: 16,
+    fontSize: calcW(0.04),
     fontWeight: '400',
-    marginTop: 10,
+    marginTop: calcH(0.02),
   },
   signup: {
     alignSelf: 'flex-start',
     textDecorationLine: 'underline',
     color: '#331ece',
-    fontSize: 16,
+    fontSize: calcW(0.04),
     fontWeight: '500',
-    marginLeft: 5,
-    marginTop: 10,
+    marginLeft: calcW(0.02),
+    marginTop: calcH(0.02),
   },
   eyeIcon: {
-    padding: 5,
+    padding: calcH(0.015),
   },
   icon: {
-    width: 24,
-    height: 24,
+    width: calcW(0.05),
+    height: calcH(0.05),
   },
   passwordContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '100%',
-    height: 40,
+    width: calcW(0.9),
+    height: calcH(0.07),
     borderColor: 'gray',
     borderWidth: 1,
-    marginBottom: 16,
-    paddingLeft: 8,
-    paddingRight: 8,
+    marginBottom: calcH(0.02),
+    paddingLeft: calcW(0.02),
+    paddingRight: calcW(0.02),
   },
   passwordInput: {
     flex: 1,

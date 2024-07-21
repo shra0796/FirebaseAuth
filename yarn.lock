@@ -2345,6 +2345,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-firebase/messaging@npm:^18.0.0":
+  version: 18.9.0
+  resolution: "@react-native-firebase/messaging@npm:18.9.0"
+  peerDependencies:
+    "@react-native-firebase/app": 18.9.0
+    expo: ">=47.0.0"
+  peerDependenciesMeta:
+    expo:
+      optional: true
+  checksum: 3e819af95a1cbc908c37a95f1bb1a33810466b0b100adeb97ac504e74d6840248ace0a110e5d33f5a14383b1790809200b808dab6b2749f3eac996a779de781a
+  languageName: node
+  linkType: hard
+
 "@react-native/assets@npm:1.0.0":
   version: 1.0.0
   resolution: "@react-native/assets@npm:1.0.0"
@@ -2826,6 +2839,7 @@ __metadata:
     "@react-native-community/eslint-config": ^2.0.0
     "@react-native-firebase/app": ^18.0.0
     "@react-native-firebase/firestore": ^18.0.0
+    "@react-native-firebase/messaging": ^18.0.0
     "@react-navigation/native": ^6.1.17
     "@react-navigation/native-stack": ^6.9.26
     "@reduxjs/toolkit": ^1.9.6
